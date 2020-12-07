@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.myapplication.Fragment.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_notification"
+            app:destination="@id/navigation_notification" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.myapplication.Fragment.DashboardFragment"
+        android:label="DashboardFragment" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_navigation_notification"
+            app:destination="@id/navigation_notification" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_notification"
+        android:name="com.example.myapplication.Fragment.NotificationFragment"
+        android:label="NotificationFragment" >
+
+        <argument android:name="amount"
+            app:argType="integer"
+            android:defaultValue="-1"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_music">
+
+        <action
+            android:id="@+id/action_navigation_music_to_navigation_home2"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    
+</navigation>
